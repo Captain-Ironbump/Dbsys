@@ -1,3 +1,7 @@
+/*
+Values are inserted into the Database
+*/
+
 insert into Land(Landname)
 values('Deutschland');
 insert into Land(Landname)
