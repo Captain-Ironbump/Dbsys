@@ -9,6 +9,8 @@ values('America');
 /* F�r Aufgabe 5c) */
 insert into Land(Landname)
 values('Spanien');
+insert into Land(Landname)
+values('Frankreich');
 
 
 insert into Ausstattung(Ausstattungsname)
