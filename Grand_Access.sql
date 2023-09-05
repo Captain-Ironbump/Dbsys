@@ -1,0 +1,11 @@
+grant select on Buchung TO dbsys49;
+grant select on Land TO dbsys49;
+grant select on Attraktion TO dbsys49;
+grant select on Anzahlung TO dbsys49;
+grant select on Kunde TO dbsys49;
+grant select on Bild TO dbsys49;
+grant select on entfernt_von TO dbsys49;
+grant select on Adresse TO dbsys49;
+grant select on besitzt TO dbsys49;
+grant select on Ferienwohnung TO dbsys49;
+grant select on Ausstattung TO dbsys49;
