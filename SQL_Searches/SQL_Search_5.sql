@@ -49,3 +49,12 @@ FROM Ferienwohnung f inner join Adresse a on f.AdressID = a.AdressID
 GROUP BY a.Stadt;
 
 -- g) Welche Ferienwohnungen mit Sauna sind in Spanien in der Zeit vom 1.11.2022 – 21.11.2022 noch frei? Geben Sie den Ferienwohnungs-Namen und deren durchschnittliche Bewertung an. Ferienwohnungen mit guten Bewertungen sollen zuerst angezeigt werden. Ferienwohnungen ohne Bewertungen sollen am Ende ausgegeben werden.
+SELECT f.ferienwohnungsname, AVG(b.Rating) AS Durchschnitt
+FROM Ferienwohnung f inner join Adresse a on f.AdressID = a.AdressID
+inner join Buchung b on f.Wohnungsnummer = b.Wohnungsnummer
+inner join besitzt be on f.Wohnungsnummer = be.Wohnungsnummer
+inner join Ausstattung au on be.Ausstattungsname = au.Ausstattungsname
+WHERE a.Landname = 'Spanien' AND au.Ausstattungsname = 'Sauna'
+AND b.Enddatum > '2022-11-01' AND b.Enddatum < '2022-11-21'
+GROUP BY f.ferienwohnungsname
+ORDER BY Durchschnitt DESC;

@@ -121,3 +121,18 @@ CREATE TABLE besitzt
 
 /* datenqualit�t, Atribute auf not null setzen */
 /* On delete cascade bei constraint (fremdschl�ssel) */
+
+
+-- Task 6 - stornierte Buchung
+CREATE TABLE StornierteBuchung
+(   
+    Stornierungsnummer      INT not null AUTO_INCREMENT,
+    Mailadresse             varchar(40) not null,
+    Buchungsnummer          INT not NULL,
+    Stornierungsdatum       DATE    not null,
+    CONSTRAINT  StornierteBuchung_pk PRIMARY KEY (Stornierungsnummer),
+    CONSTRAINT  StornierteBuchung_fk_Kunde FOREIGN KEY (Mailadresse)
+                REFERENCES Kunde(Mailadresse)
+);
+
+DROP TABLE IF EXISTS StornierteBuchung;
