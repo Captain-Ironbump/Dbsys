@@ -134,5 +134,3 @@ CREATE TABLE StornierteBuchung
     CONSTRAINT  StornierteBuchung_fk_Kunde FOREIGN KEY (Mailadresse)
                 REFERENCES Kunde(Mailadresse)
 );
-
-DROP TABLE IF EXISTS StornierteBuchung;
