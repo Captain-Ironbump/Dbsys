@@ -14,7 +14,7 @@ SELECT k.Mailadresse, k.Kundenname, COUNT(b.Buchungsnummer) AS AnzahlBuchungen, 
 FROM Kunde k left outer join Buchung b on k.Mailadresse = b.Mailadresse
 left outer join StornierteBuchung s on k.Mailadresse = s.Mailadresse
 left outer join KundeZahlung z on k.Mailadresse = z.Mailadresse
-GROUP BY k.Mailadresse, Kundenname;
+GROUP BY k.Mailadresse, k.Kundenname;
 
 SELECT * FROM Kundenstatistik;
 
