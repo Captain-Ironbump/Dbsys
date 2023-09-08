@@ -2,8 +2,11 @@
 
 CREATE VIEW KundeZahlung AS
 SELECT k.Mailadresse, b.Buchungsnummer, b.Rechnungsbetrag - SUM(a.Geldbetrag) AS Zahlung
-FROM Kunde k inner join Buchung b on k.Mailadresse = b.Mailadresse
-inner join Anzahlung a on b.Buchungsnummer = a.Buchungsnummer
+FROM Kunde k
+INNER JOIN Buchung b ON k.Mailadresse = b.Mailadresse
+INNER JOIN Anzahlung a ON b.Buchungsnummer = a.Buchungsnummer
+WHERE b.Rechnungsdatum <= CURRENT_DATE
+AND (b.Rechnungsbetrag > 0 OR b.Rechnungsdatum > CURRENT_DATE)
 GROUP BY k.Mailadresse, b.Buchungsnummer;
 
 CREATE VIEW Kundenstatistik AS
