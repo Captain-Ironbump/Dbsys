@@ -7,6 +7,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
     volumes:
-      - /Users/lukas.linde/Documents
+      - /home/cap_ironbump/volumes
     ports:
       - 3306:3306
